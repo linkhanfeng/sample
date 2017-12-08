@@ -8421,3 +8421,33 @@ p {
   color: #fff;
 }
 
+/* footer */
+
+.footer {
+  margin: 45px 0 0 0;
+  padding: 5px 0 0 0;
+  border-top: 1px solid #eee;
+  color: #777;
+}
+
+.footer a {
+  color: #555;
+}
+
+.footer a:hover {
+  color: #222;
+}
+
+.footer small {
+  float: left;
+}
+
+.footer ul {
+  float: right;
+}
+
+.footer ul li {
+  display: inline-block;
+  margin: 0 6px;
+}
+
