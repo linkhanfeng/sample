@@ -11,9 +11,6 @@ class User extends Authenticatable
     // 消息通知相关功能引用
     use Notifiable;
 
-    // 指定 表名
-    protected $table = 'users';
-
     /**
      * The attributes that are mass assignable.
      * 允许修改的属性
