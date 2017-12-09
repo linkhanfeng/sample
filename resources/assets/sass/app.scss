@@ -89,3 +89,17 @@ p {
     }
   }
 }
+
+/* sidebar */
+.user_info {
+  text-align: center;
+  .gravatar {
+    border-radius: 50%;
+    margin: 3rem auto .8rem;
+  }
+}
+
+/* signup */
+.signup{
+  margin: 3rem 0 0 0;
+}

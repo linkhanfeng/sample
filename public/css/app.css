@@ -8451,3 +8451,20 @@ p {
   margin: 0 6px;
 }
 
+/* sidebar */
+
+.user_info {
+  text-align: center;
+}
+
+.user_info .gravatar {
+  border-radius: 50%;
+  margin: 3rem auto .8rem;
+}
+
+/* signup */
+
+.signup {
+  margin: 3rem 0 0 0;
+}
+
