@@ -2,6 +2,7 @@
 
 function get_db_config()
 {
+    // 此处也可以根据域名来判断 生产环境 还是 开发环境
     if (getenv('IS_IN_HEROKU')) {
         $url = parse_url(getenv("DATABASE_URL"));
 
