@@ -9,14 +9,14 @@ use Auth;
 class SessionsController extends Controller
 {
     /**
-     * 登录页
+     * 登录表单
      */
     public function create()
     {
         return view('sessions.create');
     }
     /**
-     * 创建用户
+     * 保存登录状态
      */
     public function store(Request $request)
     {
@@ -39,9 +39,10 @@ class SessionsController extends Controller
          *    return false;
          * }
          *
+         * attempt ($credentials, '(bool) 是否记住我 默认记住两个小时,如过选择记住我功能则记住 5 年')
          * @var [type]
          */
-        if(Auth::attempt($credentials)) {
+        if(Auth::attempt($credentials,$request->has('remember'))) {
             // 登录成功后的相关操作
             session()->flash('success', trans('msg.user_login_success',['username' => Auth::user()->name]));
             return redirect()->route('users.show', [Auth::user()]); // 等同于 return redirect()->route('users.show', [Auth::user()->id]);
@@ -51,5 +52,14 @@ class SessionsController extends Controller
             return redirect()->route('login');
         }
         return;
+    }
+    /**
+     * 登出
+     */
+    public function destory()
+    {
+        Auth::logout();
+        session()->flash('success', trans('msg.user_logout_success'));
+        return redirect('login');
     }
 }

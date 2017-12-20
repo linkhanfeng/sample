@@ -15,13 +15,13 @@ Route::get('/', 'StaticPagesController@home')->name('home');
 Route::get('/help', 'StaticPagesController@help')->name('help');
 Route::get('/about', 'StaticPagesController@about')->name('about');
 
-Route::get('/signup', 'UsersController@create')->name('signup');
+Route::get('/signup', 'UsersController@create')->name('signup'); // 注册
 Route::resource('users','UsersController');
 /* resource 资源路由 等价于下面 7 个路由 */
-// Route::get('/users', 'UsersController@index')->name('users.index');
+// Route::get('/users/create', 'UsersController@create')->name('users.create'); // 注册表单
+// Route::post('/users', 'UsersController@store')->name('users.store'); // 存储注册用户
 // Route::get('/users/{user}', 'UsersController@show')->name('users.show'); // 显示用户个人信息
-// Route::get('/users/create', 'UsersController@create')->name('users.create'); // 创建用户
-// Route::post('/users', 'UsersController@store')->name('users.store'); // 处理用户创建的相关逻辑
+// Route::get('/users', 'UsersController@index')->name('users.index');
 // Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
 // Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
 // Route::delete('/users/{user}', 'UsersController@destroy')->name('users.destroy');

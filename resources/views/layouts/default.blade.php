@@ -3,6 +3,7 @@
   <head>
     <title>@yield('title', 'Sample App') - by hf</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
   </head>
   <body>
     @include('layouts._header')

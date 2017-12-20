@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 
 use App\Models\User;
 
+use Auth;
+
 class UsersController extends Controller
 {
-    // 创建用户
+    // 注册表单
     public function create()
     {
         return view('users.create');
@@ -25,6 +27,9 @@ class UsersController extends Controller
         return view('users.show', compact('user'));
     }
 
+    /**
+     * 存储注册的用户
+     */
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -33,11 +38,16 @@ class UsersController extends Controller
             'password' => 'required|confirmed'
         ]);
 
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
         ]);
+
+        // 注册成功后自动登录 方法
+        Auth::login($user);
+
         session()->flash('success', trans('user_register_success'));
         return redirect()->route('users.show', [$user->id]); // === return redirect()->route('users.show', [$user->id]);
     }
