@@ -56,7 +56,7 @@ class SessionsController extends Controller
     /**
      * 登出
      */
-    public function destory()
+    public function destroy()
     {
         Auth::logout();
         session()->flash('success', trans('msg.user_logout_success'));
