@@ -17,12 +17,7 @@ require('./bootstrap');
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
-<<<<<<< HEAD
-const app = new Vue({
-    el: '#app'
-});
-=======
+
 // const app = new Vue({
 //     el: '#app'
 // });
->>>>>>> login-logout
