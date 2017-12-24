@@ -113,3 +113,13 @@ p {
   from{opacity: 1;}
   to{opacity: 0;}
 }
+
+/* Users edit */
+.gravatar_edit {
+  margin: 15px auto;
+  text-align: center;
+  .gravatar {
+    float: none;
+    max-width: 100px;
+  }
+}
