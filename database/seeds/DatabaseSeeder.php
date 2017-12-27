@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use Illuminate\Database\Eloquent\Model;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -11,6 +13,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        // 彻底关闭批量赋值保护
+        Model::unguard();
+        $this->call(UsersTableSeeder::class);
+        // 打开批量赋值保护
+        Model::reguard();
     }
 }
