@@ -1,5 +1,7 @@
-// Bootstrap
+// Bootstrap 全部引入
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+// Bootstrap 单个引入减少体积
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_alerts.scss";
 $navbar-color: #3c3e42;
 
 /* universal */
@@ -90,8 +92,9 @@ p {
   }
 }
 
-/* sidebar */
+/* user show */
 .user_info {
+  color: #f00;
   text-align: center;
   .gravatar {
     border-radius: 50%;
