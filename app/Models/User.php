@@ -13,7 +13,7 @@ class User extends Authenticatable
 
     /**
      * The attributes that are mass assignable.
-     * 允许修改的属性
+     * 允许修改的属性 过滤防止 批量赋值
      *
      * @var array
      */
