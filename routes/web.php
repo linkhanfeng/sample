@@ -30,3 +30,6 @@ Route::resource('users','UsersController');
 Route::get('login', 'SessionsController@create')->name('login'); // 登录页
 Route::post('login', 'SessionsController@store')->name('login'); // 登录(创建新会话)
 Route::delete('logout', 'SessionsController@destroy')->name('logout'); //登出(退出登录)
+
+// 微博
+Route::resource('statuses', 'StatusesController', ['only' => ['store', 'destroy']]);

@@ -31,6 +31,8 @@ class SessionsController extends Controller
             'email' => 'required|email|max:255', // 此处仅需要保证用户输入不为空,且格式正确即可; 注册时需要保证唯一性
             'password' => 'required'
         ]);
+
+        // dd($request->all(), $request->has('remember'));
         /**
          * attempt(['email' => $email, 'password' => $pass])
          * 方法 验证 用户逻辑
