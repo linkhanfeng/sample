@@ -26,6 +26,13 @@ Route::resource('users','UsersController');
 // Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
 // Route::delete('/users/{user}', 'UsersController@destroy')->name('users.destroy');
 
+// 关注 和 被关注(粉丝) 列表
+Route::get('users/{user}/followings', 'UsersController@followings')->name('users.followings'); //显示用户的关注人列表
+Route::get('users/{user}/followers', 'UsersController@followers')->name('users.followers'); // 显示用户的粉丝列表
+// 关注 和 取消关注 功能
+Route::post('/users/followers/{user}', 'FollowersController@store')->name('followers.store');
+Route::delete('/users/followers/{user}', 'FollowersController@destroy')->name('followers.destroy');
+
 // 会话
 Route::get('login', 'SessionsController@create')->name('login'); // 登录页
 Route::post('login', 'SessionsController@store')->name('login'); // 登录(创建新会话)
